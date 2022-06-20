@@ -1,0 +1,22 @@
+$gold: gold;
+$black: black;
+$white: white;
+$silver: silver;
+$yellow: yellow;
+$gray: gray;
+
+$estilos_a: (
+    display: inline-block,
+    text-decoration: none,
+    font-weight: bold,
+    text-align: center,
+);
+
+$estilos_h123: (
+    text-align: center,
+    font-weight: bold
+);
+
+@mixin width-size($width) {
+    width: $width;
+}

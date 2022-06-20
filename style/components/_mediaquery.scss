@@ -1,0 +1,132 @@
+@import "../utilities/variables";
+
+/*Formato Tablet*/
+@media (min-width:768px) and (max-width:1023px){
+    #header{
+        flex-direction: column;
+        h1{
+            font-size: 2rem;
+        }
+        nav{
+            @include width-size(100%);
+        }
+    }
+
+    #header nav ul li a{
+        font-size: 1rem;
+    }
+
+    #banner ul li{
+        font-size: 0.8rem;
+        a{
+            font-size: 0.8rem;
+        }
+    }
+
+    #informacion{
+        margin-bottom: 5%;
+    }
+
+    .contact-container{
+        flex-direction: column;
+        ul{
+            @include width-size(100%);
+            text-align: center;
+        }
+    }
+
+    .info-details summary{
+        font-size: 1rem;
+    }
+
+    .card-video{
+        @include width-size(47.5%);
+    }
+
+    #footer_navbar ul{
+        flex-direction: column;
+        li{
+            @include width-size(25%);
+        }
+    }
+
+    #social_media ul{
+        flex-direction: column;
+    }
+}
+
+/*Formato Mobile*/
+@media (max-width:767px){
+    #header{
+        flex-direction: column;
+        height: 22.5vh;
+        h1{
+            font-size: 1.6rem;
+        }
+        nav{
+            @include width-size(100%);
+            ul{
+                flex-direction: column;
+            }
+        }
+    }
+
+    #header nav ul li a{
+        font-size: 0.8rem;
+    }
+
+    #banner ul li{
+        font-size: 0.6rem;
+        a{
+            font-size: 0.6rem;
+        }
+    }
+
+    #informacion{ 
+        margin-bottom: 80%;
+    }
+
+    .content-sponsors{
+        padding-bottom: 30%;
+    }
+
+    .contact-container{
+        flex-direction: column;
+        ul{
+            @include width-size(100%);
+            text-align: center;
+        }
+    }
+
+    .info-details summary{
+        font-size: 1rem;
+    }
+
+    .card-video{
+        @include width-size(100%);
+    }
+
+    .content-cronograma{
+        flex-direction: column;
+    }
+
+    #sponsors{
+        margin-bottom: 30%;
+    }
+
+    #footer{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: "up_button"
+                             "footer_navbar"
+                             "social_media"
+                             "copy_right";
+    }
+
+    #footer_navbar ul{
+        flex-direction: column;
+        li{
+            @include width-size(25%);
+        }
+    }
+}

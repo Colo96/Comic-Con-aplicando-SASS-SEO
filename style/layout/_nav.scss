@@ -1,0 +1,55 @@
+@import "../utilities/variables";
+@import "../components/mediaquery";
+
+#header{
+    @include width-size(100%);
+    grid-area: header;
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 10vh;
+    h1{
+        @include width-size(30%);
+        text-align: map-get($estilos_h123, text-align);
+        font-size: 2.4rem;
+        font-family: 'Squada One', cursive;
+        color: $gold;
+    }
+    nav{
+        @include width-size(70%);
+        ul{
+            @include width-size(100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 2%;
+            li{
+                @include width-size(15%);
+                list-style-type: none;
+                a{
+                    text-decoration: map-get($estilos_a, text-decoration);
+                    color: $white;
+                    display: map-get($estilos_a, display);
+                    @include width-size(100%);
+                    text-align: map-get($estilos_a, text-align);
+                    padding: 5%;
+                    font-size: 1.2rem;
+                    font-weight: map-get($estilos_a, font-weight);
+                    font-family: 'Libre Franklin', sans-serif;
+                    &:hover{
+                        background-color: $silver;
+                        color: $black;
+                        font-weight: map-get($estilos_a, font-weight);
+                    }
+                    &:focus{
+                        background-color: $gold;
+                        color: $black;
+                        font-weight: map-get($estilos_a, font-weight);
+                    }
+                }
+            }
+        }
+    }    
+}

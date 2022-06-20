@@ -1,0 +1,113 @@
+@import "../utilities/variables";
+@import "../components/mediaquery";
+
+#footer{
+    @include width-size(100%);
+    grid-area: footer;
+    background-color: $black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "up_button up_button"
+                         "footer_navbar social_media"
+                         "copy_right copy_right";
+}
+
+#up_button{
+    grid-area: up_button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        display: map-get($estilos_a, display);
+        text-decoration: map-get($estilos_a, text-decoration);
+        color: $white;
+        padding: 1%;
+        margin: 1%;
+        border: 1px solid $gold;
+        font-size: 1.2rem;
+        font-weight: map-get($estilos_a, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        &:hover{
+            background-color: $silver;
+            color: $black;
+            font-weight: map-get($estilos_a, font-weight);
+        }
+        &:focus{
+            background-color: $gold;
+            color: $black;
+            font-weight: map-get($estilos_a, font-weight);
+        }
+    }
+}
+
+#footer_navbar{
+    grid-area: footer_navbar;
+    ul{
+        @include width-size(100%);
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li{
+            margin: 2%;
+            @include width-size(15%);
+            a{
+                display: map-get($estilos_a, display);
+                @include width-size(100%);
+                text-align: center;
+                padding: 5%;
+                text-decoration: map-get($estilos_a, text-decoration);
+                color: $white;
+                font-size: 1.2rem;
+                font-weight: map-get($estilos_a, font-weight);
+                font-family: 'Libre Franklin', sans-serif;
+                &:hover{
+                    background-color: $silver;
+                    color: $black;
+                    font-weight: map-get($estilos_a, font-weight);
+                }
+                &:focus{
+                    background-color: $gold;
+                    color: $black;
+                    font-weight: map-get($estilos_a, font-weight);
+                }
+            }
+        }
+    }
+}
+
+#social_media{
+    grid-area: social_media;
+    ul{
+        @include width-size(100%);
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2%;
+        li{
+            @include width-size(20%);
+            a{
+                display: map-get($estilos_a, display);
+                @include width-size(100%);
+                text-align: map-get($estilos_a, text-align);
+                text-decoration: map-get($estilos_a, text-decoration);
+                padding: 2%;
+            }
+        }
+    }
+}
+
+#copy_right{
+    @include width-size(100%);
+    grid-area: copy_right;
+    p{
+        text-align: center;
+        color: $white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        font-family: 'Libre Franklin', sans-serif;
+        padding: 2%;
+    }
+}

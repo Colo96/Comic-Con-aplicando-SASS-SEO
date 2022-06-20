@@ -1,0 +1,560 @@
+@import "./utilities/variables";
+@import "./base/generales";
+@import "./layout/nav";
+@import "./layout/footer";
+@import "./components/mediaquery";
+
+
+#body{
+    @include width-size(100%);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "header"
+                         "banner"
+                         "main"
+                         "footer";
+}
+
+#banner{
+    @include width-size(100%);
+    grid-area: banner;
+    background-image: url(../imagenes/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vw * (513 / 1343));
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    ul{
+        background-color: $gold;
+        @include width-size(25%);
+        padding: 2.5%;
+        opacity: 50%;
+        margin: 2.5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        li{
+            margin: 2%;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: 'Libre Franklin', sans-serif;
+            @include width-size(100%);
+            text-align: center;
+            a{
+                background-color: $black;
+                display: map-get($estilos_a, display);
+                @include width-size(100%);
+                padding: 2%;
+                font-size: 1rem;
+                font-weight: map-get($estilos_a, font-weight);
+                font-family: 'Libre Franklin', sans-serif;
+                text-decoration: map-get($estilos_a, text-decoration);
+                color: $white;
+                text-align: center;
+                &:hover{
+                    background-color: $silver;
+                    color: $black;
+                }
+                &:focus{
+                    background-color: $gray;
+                    color: $black;
+                }
+            }
+        }
+    }
+}
+
+#main{
+    @include width-size(100%);
+    grid-area: main;
+    background-color: $yellow;
+}
+
+#informacion{
+    @include width-size(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 5%;
+    h1{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.6rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+}
+
+#conteiner{
+    @include width-size(100%);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(333px, 1fr));
+    grid-auto-rows: auto;
+    gap: 1%;
+}
+
+.card{
+    background-color: $white;
+    figure{
+        @include width-size(100%);
+        img{
+            @include width-size(100%);
+        }
+    }
+}
+
+.card-content{
+    @include width-size(100%);
+    h2{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.3rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+    }
+    p{
+        @include width-size(100%);
+        padding: 2%;
+        font-size: 1rem;
+        font-family: 'Titillium Web', sans-serif;
+    }
+}
+
+#sponsors{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include width-size(100%);
+    h1{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.6rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+}
+
+.content-sponsors{
+    @include width-size(100%);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(333px, 1fr));
+    grid-auto-rows: auto;
+    gap: 1%;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding-bottom: 5%;
+    li{
+        text-align: center;
+        img{
+            @include width-size(33%);
+        }
+    }
+}
+
+#newsletter{
+    @include width-size(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.6rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+    }
+}
+
+.form_newsletter{
+    @include width-size(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    label{
+        padding: 1%;
+        font-size: 1rem;
+        font-family: 'Titillium Web', sans-serif;
+    }
+    input{
+        padding: 0.5%;
+        margin: 0.5%;
+        @include width-size(20%);
+        font-size: 1rem;
+        font-family: 'Titillium Web', sans-serif;
+    }
+}
+
+/*Pagina contacto*/
+#main-contact{
+    @include width-size(100%);
+    grid-area: main;
+    background-color: $gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.6rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+}
+
+.contact-container{
+    @include width-size(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    ul{
+        list-style-type: none;
+        @include width-size(50%);
+        text-align: end;
+        li{
+            padding: 2%;
+            font-size: 1rem;
+            font-family: 'Titillium Web', sans-serif;
+        }
+    }
+    form{
+        @include width-size(50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2%;
+        background-color: $silver;
+        label{
+            @include width-size(100%);
+            padding: 2%;
+            font-size: 1rem;
+            font-family: 'Titillium Web', sans-serif;
+        }
+        input{
+            @include width-size(50%);
+            padding: 1%;
+        }
+     }
+}
+
+.contact-location{
+    @include width-size(100%);
+    text-align: center;
+    padding: 2%;
+    iframe{
+        @include width-size(100%);
+    }
+}
+
+/*Pagina Info*/
+
+#main-info{
+    @include width-size(100%);
+    background-color: $gold;
+    display: flex;
+    flex-direction: column;
+    h1{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.6rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+}
+
+.info-details{
+    background-color: $silver;
+    @include width-size(80%);
+    margin: 2.5% 10%;
+    padding: 2.5%;
+    cursor: pointer;
+    summary{
+        @include width-size(100%);
+        text-align: center;
+        padding: 2%;
+        font-size: 1.3rem;
+        font-weight: bold;
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+    p{
+        @include width-size(100%);
+        padding: 2%;
+        font-size: 1rem;
+        font-family: 'Titillium Web', sans-serif;
+    }
+}
+
+#covid-19{
+    @include width-size(80%);
+    margin: 2.5% 10%;
+    padding: 2.5%;
+    background-color: $silver;
+    h1{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.6rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+    p{
+        @include width-size(100%);
+        font-size: 1rem;
+        font-family: 'Titillium Web', sans-serif;
+    }  
+}
+
+/*Pagina Programa*/
+
+#main-programa{
+    @extend #main-info;
+    h1{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.6rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+    section{
+        @include width-size(80%);
+        margin: 2.5% 10%;
+        padding: 2.5%;
+        background-color: $silver;
+        h2{
+            @include width-size(100%);
+            text-align: map-get($estilos_h123, text-align);
+            padding: 2%;
+            font-size: 1.3rem;
+            font-weight: map-get($estilos_h123, font-weight);
+            font-family: 'Libre Franklin', sans-serif;
+            color: $black;
+        }
+    }
+}
+
+.container-video{
+    @include width-size(100%);
+    display: flex;
+    flex-wrap:wrap;
+    gap: 5%;
+}
+
+.card-video{
+    @include width-size(30%);
+    h3{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+    iframe{
+        @include width-size(100%);
+    }
+}
+
+.cronograma{
+    @include width-size(100%);
+    h3{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+}
+
+.content-cronograma{
+    @include width-size(100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    ul{
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 2%;
+        li{
+            font-size: 1rem;
+            font-family: 'Titillium Web', sans-serif;
+        }
+    }
+}
+
+/*Pagina expositores*/
+
+#main-expo{
+    @extend #main-info;
+    h1{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.6rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+}
+
+#invitados-especiales{
+    @include width-size(80%);
+    margin: 0 10% 5% 10%;
+    background-color: $silver;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.3rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+}
+
+.container-card-ie{
+    @include width-size(100%);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+.card-ie{
+    @include width-size(20%);
+    margin: 5%;
+    figure{
+        @include width-size(100%);
+        img{
+            @include width-size(100%);
+        }
+    }
+    p{
+        @include width-size(100%);
+        font-size: 1rem;
+        font-family: 'Titillium Web', sans-serif;
+    }
+}
+
+#stands{
+    @include width-size(80%);
+    margin: 0 10% 5% 10%;
+    background-color: $silver;
+    display: flex;
+    flex-direction: column;
+    figure{
+        @include width-size(100%);
+        img{
+            @include width-size(100%);
+        }
+    }
+    h2{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.3rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+}
+
+.container-card-stands{
+    @include width-size(100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: top;
+}
+
+.card-stands{
+    @include width-size(30%);
+    padding-bottom: 2%;
+    ul{
+        @include width-size(100%);
+        list-style-type: none;
+        li{
+            font-size: 1rem;
+            font-family: 'Titillium Web', sans-serif;
+        }
+    }
+}
+
+#artistas{
+    @include width-size(80%);
+    margin: 0 10% 5% 10%;
+    background-color: $silver;
+    display: flex;
+    flex-direction: column;
+    h2{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1.3rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+}
+
+.container-card-artistas{
+    @include width-size(100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: top;
+}
+
+.card-artistas{
+    @include width-size(40%);
+    padding-bottom: 2%;
+    h3{
+        @include width-size(100%);
+        text-align: map-get($estilos_h123, text-align);
+        padding: 2%;
+        font-size: 1rem;
+        font-weight: map-get($estilos_h123, font-weight);
+        font-family: 'Libre Franklin', sans-serif;
+        color: $black;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        li{
+            font-size: 1rem;
+            font-family: 'Titillium Web', sans-serif;
+        }
+    }
+}
